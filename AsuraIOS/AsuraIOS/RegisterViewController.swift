@@ -43,22 +43,28 @@ class RegisterViewController: UIViewController {
         let password = self.passwordField.text
         let email = self.emailField.text
         let finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let alertController_username = UIAlertController(title: "Error", message: "Username must be greater than 5 characters", preferredStyle: .Alert)
+        let alertController_password = UIAlertController(title: "Error", message: "Password must be greater than 8 characters", preferredStyle: .Alert)
+        let alertController_email = UIAlertController(title: "Error", message: "Please enter a valid email address", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "ok", style: .Default) {
+            (action) -> Void in print("Alert message")
+        }
         
-        // 驗證文字欄位
+        // verify input
         if let username = username where username.characters.count < 5 {
-            let alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            alertController_username.addAction(okAction)
+            self.presentViewController(alertController_username, animated: true, completion: nil)
             
         } else if let password = password where password.characters.count < 8 {
-            let alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            alertController_password.addAction(okAction)
+            self.presentViewController(alertController_password, animated: true, completion: nil)
             
         } else if let email = email where email.characters.count < 8 {
-            let alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            alertController_email.addAction(okAction)
+            self.presentViewController(alertController_email, animated: true, completion: nil)
             
         } else {
-            // 顯示旋轉圖示，代表工作正在進行中
+            // spinner
             let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
             spinner.startAnimating()
             
@@ -68,18 +74,17 @@ class RegisterViewController: UIViewController {
             newUser.password = password
             newUser.email = finalEmail
             
-            // 以非同步方式註冊使用者
+            // register user by async method
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                 
-                // 停止旋轉圖示
+                // stop spinner
                 spinner.stopAnimating()
                 if ((error) != nil) {
-                    let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    let alertController_signup_fail = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
+                    alertController_signup_fail.addAction(okAction)
+                    self.presentViewController(alertController_signup_fail, animated: true, completion: nil)
                     
                 } else {
-                    let alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
                         self.presentViewController(viewController, animated: true, completion: nil)

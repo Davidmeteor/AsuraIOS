@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -17,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-XN-BUL">
-                                <rect key="frame" x="233" y="512" width="134" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-XN-BUL">
+                                <rect key="frame" x="251" y="512" width="98" height="45"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,14 +29,24 @@
                                     <action selector="logOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEw-bL-SuI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-ek-DaK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-ek-DaK">
                                 <rect key="frame" x="239" y="461" width="123" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="bfu-sO-9Fg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y3x-ek-DaK" firstAttribute="centerX" secondItem="bjg-XN-BUL" secondAttribute="centerX" id="1x6-le-D5t"/>
+                            <constraint firstItem="bjg-XN-BUL" firstAttribute="top" secondItem="Y3x-ek-DaK" secondAttribute="bottom" constant="8" symbolic="YES" id="FBl-Am-arf"/>
+                            <constraint firstItem="Y3x-ek-DaK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IBK-px-EGK"/>
+                            <constraint firstItem="Y3x-ek-DaK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="441" id="efK-Xb-dAw"/>
+                            <constraint firstItem="bjg-XN-BUL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lg3-9M-9tn"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="userNameLabel" destination="Y3x-ek-DaK" id="ibJ-87-aD6"/>
@@ -57,10 +68,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aeg-Pe-Hjp">
-                                <rect key="frame" x="201" y="535" width="95" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aeg-Pe-Hjp">
+                                <rect key="frame" x="20" y="535" width="95" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="xZm-4n-MBb"/>
+                                    <constraint firstAttribute="width" constant="95" id="mPi-7v-pHM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="Sign In">
@@ -69,9 +80,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWu-fg-Ssz">
-                                <rect key="frame" x="304" y="535" width="95" height="45"/>
+                                <rect key="frame" x="485" y="535" width="95" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="jce-60-RCQ"/>
+                                    <constraint firstAttribute="width" constant="95" id="taZ-K3-br0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="Register">
@@ -85,11 +96,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="baseline" secondItem="tWu-fg-Ssz" secondAttribute="baseline" id="Czp-0M-1vL"/>
+                            <constraint firstItem="tWu-fg-Ssz" firstAttribute="top" secondItem="29b-p6-Kqb" secondAttribute="bottom" constant="515" id="2EQ-l6-aSU"/>
+                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="top" secondItem="29b-p6-Kqb" secondAttribute="bottom" constant="515" id="CsE-V3-7dc"/>
+                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="centerY" secondItem="mjS-r6-Sav" secondAttribute="centerY" id="Efq-Af-JcZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Aeg-Pe-Hjp" secondAttribute="bottom" constant="20" symbolic="YES" id="JDn-IE-qeV"/>
                             <constraint firstAttribute="bottom" secondItem="Aeg-Pe-Hjp" secondAttribute="bottom" constant="20" symbolic="YES" id="TQD-gD-51c"/>
-                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="leading" secondItem="mjS-r6-Sav" secondAttribute="leading" constant="201" id="eTr-qg-ism"/>
-                            <constraint firstItem="tWu-fg-Ssz" firstAttribute="leading" secondItem="Aeg-Pe-Hjp" secondAttribute="trailing" constant="8" symbolic="YES" id="zre-i5-cly"/>
+                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="leading" secondItem="mjS-r6-Sav" secondAttribute="leadingMargin" id="YRf-z2-8fn"/>
+                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="centerY" secondItem="mjS-r6-Sav" secondAttribute="centerY" id="cOj-TL-Bvm"/>
+                            <constraint firstItem="Aeg-Pe-Hjp" firstAttribute="baseline" secondItem="tWu-fg-Ssz" secondAttribute="baseline" id="erq-fy-BHs"/>
+                            <constraint firstItem="tWu-fg-Ssz" firstAttribute="trailing" secondItem="mjS-r6-Sav" secondAttribute="trailingMargin" id="jfz-DE-TCS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CsE-V3-7dc"/>
+                                <exclude reference="Efq-Af-JcZ"/>
+                                <exclude reference="TQD-gD-51c"/>
+                                <exclude reference="cOj-TL-Bvm"/>
+                                <exclude reference="2EQ-l6-aSU"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gA-06-pY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,7 +199,7 @@
                                     <constraint firstItem="0Vw-3Q-diN" firstAttribute="top" secondItem="veo-8q-NJW" secondAttribute="bottom" constant="23" id="xLS-sm-iDE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3W-L8-R67">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3W-L8-R67">
                                 <rect key="frame" x="550" y="28" width="30" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
@@ -195,6 +220,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="u3W-L8-R67" firstAttribute="trailing" secondItem="cVf-74-aad" secondAttribute="trailingMargin" id="3Cs-NZ-wmG"/>
+                            <constraint firstItem="u3W-L8-R67" firstAttribute="top" secondItem="6Tw-BI-OVk" secondAttribute="bottom" constant="8" symbolic="YES" id="ejU-d9-mEQ"/>
                             <constraint firstItem="rJq-Yy-KzU" firstAttribute="centerX" secondItem="cVf-74-aad" secondAttribute="centerX" id="lTb-Oo-pNl"/>
                             <constraint firstItem="1Fq-JZ-2ke" firstAttribute="top" secondItem="rJq-Yy-KzU" secondAttribute="bottom" constant="41" id="mYF-6B-NTi"/>
                         </constraints>
