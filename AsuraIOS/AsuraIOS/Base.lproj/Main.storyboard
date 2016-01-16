@@ -124,7 +124,7 @@
         <!--Register View Controller-->
         <scene sceneID="gK5-9l-kA4">
             <objects>
-                <viewController id="iRS-bJ-VY4" customClass="RegisterViewController" customModule="AsuraIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" id="iRS-bJ-VY4" customClass="RegisterViewController" customModule="AsuraIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Tw-BI-OVk"/>
                         <viewControllerLayoutGuide type="bottom" id="1Fq-JZ-2ke"/>
