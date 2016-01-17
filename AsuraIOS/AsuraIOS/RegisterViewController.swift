@@ -7,16 +7,20 @@
 //
 
 import UIKit
-import Parse
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.delegate = self
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
 
         // Do any additional setup after loading the view.
     }
@@ -26,6 +30,66 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result:FBSDKLoginManagerLoginResult!, error: NSError!)
+    {
+        
+        if(error != nil)
+        {
+            print(error.localizedDescription)
+            return
+        }
+        
+        if let userToken = result.token
+        {
+            // Get user access token
+            let token:FBSDKAccessToken = result.token
+            print("Token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
+            print("User ID = \(FBSDKAccessToken.currentAccessToken().userID)")
+            // Insert to Pasrse
+            if(PFUser.currentUser() == nil)
+            {
+                let newUser = PFUser()
+                
+                newUser.username = FBSDKAccessToken.currentAccessToken().userID
+                newUser.password = FBSDKAccessToken.currentAccessToken().userID
+                
+                // register user by async method
+                newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+                    
+                    // stop spinner
+                    if ((error) != nil) {
+                        print("\(error?.localizedDescription)")
+                        // Re-log in the user
+                        // Need to log in
+                        PFUser.logInWithUsernameInBackground(FBSDKAccessToken.currentAccessToken().userID, password: FBSDKAccessToken.currentAccessToken().userID, block: { (user, error) -> Void in
+                            if ((user) != nil) {
+                                print("Parse User log in success")
+                            }
+                            else
+                            {
+                                print("can't log in to Parse")
+                                return
+                            }
+                        })
+                    } else {
+                        print("add User to Parse")
+                    }
+                })
+            }
+            
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                self.presentViewController(viewController, animated: true, completion: nil)
+            })
+            
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
+    {
+        print("user is logged out")
+    }
 
     /*
     // MARK: - Navigation

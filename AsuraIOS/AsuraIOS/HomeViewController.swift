@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class HomeViewController: UIViewController {
 
@@ -17,6 +16,25 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil))
+        {
+            // do nothing
+            return
+        }
+        if((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() != nil))
+        {
+            // Need to log in
+            PFUser.logInWithUsernameInBackground(FBSDKAccessToken.currentAccessToken().userID, password: FBSDKAccessToken.currentAccessToken().userID, block: { (user, error) -> Void in
+                if ((user) != nil) {
+                    print("Parse User log in success")
+                }
+                else
+                {
+                    print("can't log in to Parse")
+                    return
+                }
+            })
+        }
         if let pUserName = PFUser.currentUser()?["username"] as? String {
             self.userNameLabel.text = "@" + pUserName
         }
@@ -28,18 +46,83 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (PFUser.currentUser() == nil) {
+        if ((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil)) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginRegister")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
+        // Read more information from Facebook
+        var requestParameters = ["fields": "id, email, first_name, last_name"]
+        let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
+        userDetails.startWithCompletionHandler{
+            (connection, result, error:NSError!) -> Void in
+            
+            if(error != nil)
+            {
+                print("testsetes")
+                print("\(error.localizedDescription)")
+                return
+            }
+            
+            if(result != nil)
+            {
+                
+                let userId:String = result["id"] as! String
+                let userFirstName:String? = result["first_name"] as? String
+                let userLastName:String? = result["last_name"] as? String
+                let userEmail:String? = result["email"] as? String
+                
+                print("\(userEmail)")
+                
+                // Insert to Pasrse
+                
+                let myUser = PFUser.currentUser()!
+                
+                if(userFirstName != nil)
+                {
+                    myUser.setObject(userFirstName!, forKey: "first_name")
+                }
+                if(userLastName != nil)
+                {
+                    myUser.setObject(userLastName!, forKey: "last_name")
+                }
+                if(userEmail != nil)
+                {
+                    myUser.setObject(userEmail!, forKey: "email")
+                }
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                    var userProfile = "https://graph.facebook.com/" + userId + "/picture?type=large"
+                    let profilePictureUrl = NSURL(string: userProfile)
+                    let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
+                    
+                    if(profilePictureData != nil)
+                    {
+                        let profileFileObject = PFFile(data: profilePictureData!)
+                        myUser.setObject(profileFileObject!, forKey: "profile_picture")
+                    }
+                    
+                    myUser.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                        
+                        if(success)
+                        {
+                            print("user details are updated to Parse")
+                        }
+                        
+                    })
+                }
+            }
+        }
+
     }
     
     @IBAction func logOutAction(sender: AnyObject) {
         
         // log out
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         PFUser.logOut()
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in

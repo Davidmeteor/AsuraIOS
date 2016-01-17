@@ -7,57 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63DF20361C4B00DC001ECC11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF20351C4B00DC001ECC11 /* LoginViewController.swift */; };
+		63DF20381C4B00FD001ECC11 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 63DF20371C4B00FD001ECC11 /* Podfile */; };
 		8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2771C48B74E000E2869 /* AppDelegate.swift */; };
 		8FC5B27D1C48B74E000E2869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC5B27B1C48B74E000E2869 /* Main.storyboard */; };
 		8FC5B27F1C48B74E000E2869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FC5B27E1C48B74E000E2869 /* Assets.xcassets */; };
 		8FC5B2821C48B74E000E2869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC5B2801C48B74E000E2869 /* LaunchScreen.storyboard */; };
-		8FC5B28A1C48B784000E2869 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2891C48B784000E2869 /* Parse.framework */; };
-		8FC5B28C1C48B7C9000E2869 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B28B1C48B7C9000E2869 /* Bolts.framework */; };
-		8FC5B2921C48B7FC000E2869 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B28E1C48B7FC000E2869 /* ParseFacebookUtils.framework */; };
-		8FC5B2931C48B7FC000E2869 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B28F1C48B7FC000E2869 /* ParseFacebookUtilsV4.framework */; };
-		8FC5B2941C48B7FC000E2869 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2901C48B7FC000E2869 /* ParseTwitterUtils.framework */; };
-		8FC5B2951C48B7FC000E2869 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2911C48B7FC000E2869 /* ParseUI.framework */; };
-		8FC5B2971C48B80A000E2869 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2961C48B80A000E2869 /* AudioToolbox.framework */; };
-		8FC5B2991C48B813000E2869 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2981C48B813000E2869 /* CFNetwork.framework */; };
-		8FC5B29B1C48B81D000E2869 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B29A1C48B81D000E2869 /* CoreGraphics.framework */; };
-		8FC5B29D1C48B823000E2869 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B29C1C48B823000E2869 /* CoreLocation.framework */; };
-		8FC5B29F1C48B827000E2869 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B29E1C48B827000E2869 /* QuartzCore.framework */; };
-		8FC5B2A11C48B82C000E2869 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2A01C48B82C000E2869 /* Security.framework */; };
-		8FC5B2A31C48B832000E2869 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2A21C48B832000E2869 /* StoreKit.framework */; };
-		8FC5B2A51C48B837000E2869 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2A41C48B837000E2869 /* SystemConfiguration.framework */; };
-		8FC5B2A71C48B83E000E2869 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2A61C48B83E000E2869 /* libz.tbd */; };
-		8FC5B2A91C48B845000E2869 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5B2A81C48B845000E2869 /* libsqlite3.tbd */; };
 		8FC5B2AB1C48BFF2000E2869 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2AA1C48BFF2000E2869 /* HomeViewController.swift */; };
 		8FC5B2AD1C48C499000E2869 /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2AC1C48C499000E2869 /* LoginRegisterViewController.swift */; };
 		8FC5B2AF1C48C76E000E2869 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2AE1C48C76E000E2869 /* RegisterViewController.swift */; };
+		DFA0F982FC0BA871CBD65798 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF4078DF4401492C3F70A6F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AF4078DF4401492C3F70A6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		636C33391C4B01C0005C0D47 /* AsuraIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsuraIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		63DF20351C4B00DC001ECC11 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		63DF20371C4B00FD001ECC11 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		682DC99CCE04CE4112248BBF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC5B2741C48B74E000E2869 /* AsuraIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsuraIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FC5B2771C48B74E000E2869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FC5B27C1C48B74E000E2869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FC5B27E1C48B74E000E2869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FC5B2811C48B74E000E2869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FC5B2831C48B74E000E2869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FC5B2891C48B784000E2869 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		8FC5B28B1C48B7C9000E2869 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		8FC5B28E1C48B7FC000E2869 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		8FC5B28F1C48B7FC000E2869 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		8FC5B2901C48B7FC000E2869 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
-		8FC5B2911C48B7FC000E2869 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		8FC5B2961C48B80A000E2869 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		8FC5B2981C48B813000E2869 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		8FC5B29A1C48B81D000E2869 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8FC5B29C1C48B823000E2869 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8FC5B29E1C48B827000E2869 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8FC5B2A01C48B82C000E2869 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8FC5B2A21C48B832000E2869 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		8FC5B2A41C48B837000E2869 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		8FC5B2A61C48B83E000E2869 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8FC5B2A81C48B845000E2869 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8FC5B2AA1C48BFF2000E2869 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FC5B2AC1C48C499000E2869 /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
 		8FC5B2AE1C48C76E000E2869 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		ACB09D92148A09A9E741EAC9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,22 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC5B2A91C48B845000E2869 /* libsqlite3.tbd in Frameworks */,
-				8FC5B2A71C48B83E000E2869 /* libz.tbd in Frameworks */,
-				8FC5B2A51C48B837000E2869 /* SystemConfiguration.framework in Frameworks */,
-				8FC5B2A31C48B832000E2869 /* StoreKit.framework in Frameworks */,
-				8FC5B2A11C48B82C000E2869 /* Security.framework in Frameworks */,
-				8FC5B29F1C48B827000E2869 /* QuartzCore.framework in Frameworks */,
-				8FC5B29D1C48B823000E2869 /* CoreLocation.framework in Frameworks */,
-				8FC5B29B1C48B81D000E2869 /* CoreGraphics.framework in Frameworks */,
-				8FC5B2991C48B813000E2869 /* CFNetwork.framework in Frameworks */,
-				8FC5B2971C48B80A000E2869 /* AudioToolbox.framework in Frameworks */,
-				8FC5B2951C48B7FC000E2869 /* ParseUI.framework in Frameworks */,
-				8FC5B28A1C48B784000E2869 /* Parse.framework in Frameworks */,
-				8FC5B28C1C48B7C9000E2869 /* Bolts.framework in Frameworks */,
-				8FC5B2931C48B7FC000E2869 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				8FC5B2921C48B7FC000E2869 /* ParseFacebookUtils.framework in Frameworks */,
-				8FC5B2941C48B7FC000E2869 /* ParseTwitterUtils.framework in Frameworks */,
+				DFA0F982FC0BA871CBD65798 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +52,12 @@
 		8FC5B26B1C48B74E000E2869 = {
 			isa = PBXGroup;
 			children = (
+				63DF20371C4B00FD001ECC11 /* Podfile */,
 				8FC5B2761C48B74E000E2869 /* AsuraIOS */,
 				8FC5B2751C48B74E000E2869 /* Products */,
 				8FC5B28D1C48B7D1000E2869 /* Frameworks */,
+				CB81D968E08A243D4D4A6ECB /* Pods */,
+				636C33391C4B01C0005C0D47 /* AsuraIOS-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +80,7 @@
 				8FC5B2AA1C48BFF2000E2869 /* HomeViewController.swift */,
 				8FC5B2AC1C48C499000E2869 /* LoginRegisterViewController.swift */,
 				8FC5B2AE1C48C76E000E2869 /* RegisterViewController.swift */,
+				63DF20351C4B00DC001ECC11 /* LoginViewController.swift */,
 			);
 			path = AsuraIOS;
 			sourceTree = "<group>";
@@ -122,24 +88,18 @@
 		8FC5B28D1C48B7D1000E2869 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8FC5B2A81C48B845000E2869 /* libsqlite3.tbd */,
-				8FC5B2A61C48B83E000E2869 /* libz.tbd */,
-				8FC5B2A41C48B837000E2869 /* SystemConfiguration.framework */,
-				8FC5B2A21C48B832000E2869 /* StoreKit.framework */,
-				8FC5B2A01C48B82C000E2869 /* Security.framework */,
-				8FC5B29E1C48B827000E2869 /* QuartzCore.framework */,
-				8FC5B29C1C48B823000E2869 /* CoreLocation.framework */,
-				8FC5B29A1C48B81D000E2869 /* CoreGraphics.framework */,
-				8FC5B2981C48B813000E2869 /* CFNetwork.framework */,
-				8FC5B2961C48B80A000E2869 /* AudioToolbox.framework */,
-				8FC5B28E1C48B7FC000E2869 /* ParseFacebookUtils.framework */,
-				8FC5B28F1C48B7FC000E2869 /* ParseFacebookUtilsV4.framework */,
-				8FC5B2901C48B7FC000E2869 /* ParseTwitterUtils.framework */,
-				8FC5B2911C48B7FC000E2869 /* ParseUI.framework */,
-				8FC5B28B1C48B7C9000E2869 /* Bolts.framework */,
-				8FC5B2891C48B784000E2869 /* Parse.framework */,
+				4AF4078DF4401492C3F70A6F /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB81D968E08A243D4D4A6ECB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				682DC99CCE04CE4112248BBF /* Pods.debug.xcconfig */,
+				ACB09D92148A09A9E741EAC9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FC5B2861C48B74E000E2869 /* Build configuration list for PBXNativeTarget "AsuraIOS" */;
 			buildPhases = (
+				C0165F8CA7E01721D631E2DF /* Check Pods Manifest.lock */,
 				8FC5B2701C48B74E000E2869 /* Sources */,
 				8FC5B2711C48B74E000E2869 /* Frameworks */,
 				8FC5B2721C48B74E000E2869 /* Resources */,
+				3FE398EE8E4354BFB34C3C2C /* Embed Pods Frameworks */,
+				CF7D356581565C9F2425BFE3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,11 +165,60 @@
 			files = (
 				8FC5B2821C48B74E000E2869 /* LaunchScreen.storyboard in Resources */,
 				8FC5B27F1C48B74E000E2869 /* Assets.xcassets in Resources */,
+				63DF20381C4B00FD001ECC11 /* Podfile in Resources */,
 				8FC5B27D1C48B74E000E2869 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FE398EE8E4354BFB34C3C2C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0165F8CA7E01721D631E2DF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF7D356581565C9F2425BFE3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8FC5B2701C48B74E000E2869 /* Sources */ = {
@@ -216,6 +228,7 @@
 				8FC5B2AD1C48C499000E2869 /* LoginRegisterViewController.swift in Sources */,
 				8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */,
 				8FC5B2AB1C48BFF2000E2869 /* HomeViewController.swift in Sources */,
+				63DF20361C4B00DC001ECC11 /* LoginViewController.swift in Sources */,
 				8FC5B2AF1C48C76E000E2869 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,8 +340,10 @@
 		};
 		8FC5B2871C48B74E000E2869 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682DC99CCE04CE4112248BBF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -337,13 +352,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DavidLin.AsuraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsuraIOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8FC5B2881C48B74E000E2869 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACB09D92148A09A9E741EAC9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -352,6 +371,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DavidLin.AsuraIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsuraIOS-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -374,6 +394,7 @@
 				8FC5B2881C48B74E000E2869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
