@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                     print("log in success")
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
                         self.presentViewController(viewController, animated: true, completion: nil)
                     })
                     
@@ -124,7 +124,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             }
 
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
             

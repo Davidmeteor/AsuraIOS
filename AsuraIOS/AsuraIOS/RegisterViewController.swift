@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
             
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
             
@@ -150,7 +150,7 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
                     
                 } else {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
                         self.presentViewController(viewController, animated: true, completion: nil)
                     })
                 }

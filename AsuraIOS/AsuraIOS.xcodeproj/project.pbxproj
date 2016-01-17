@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		638DD02E1C4B7CB5009706DB /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DD02D1C4B7CB5009706DB /* AccountViewController.swift */; };
+		638DD0301C4B7CCB009706DB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DD02F1C4B7CCB009706DB /* SettingViewController.swift */; };
+		638DD0321C4B8133009706DB /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DD0311C4B8133009706DB /* ItineraryViewController.swift */; };
+		638DD0341C4B81C2009706DB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DD0331C4B81C2009706DB /* NoteViewController.swift */; };
 		63DF20361C4B00DC001ECC11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF20351C4B00DC001ECC11 /* LoginViewController.swift */; };
 		63DF20381C4B00FD001ECC11 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 63DF20371C4B00FD001ECC11 /* Podfile */; };
 		8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2771C48B74E000E2869 /* AppDelegate.swift */; };
@@ -22,6 +26,10 @@
 /* Begin PBXFileReference section */
 		4AF4078DF4401492C3F70A6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		636C33391C4B01C0005C0D47 /* AsuraIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsuraIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		638DD02D1C4B7CB5009706DB /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		638DD02F1C4B7CCB009706DB /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		638DD0311C4B8133009706DB /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
+		638DD0331C4B81C2009706DB /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		63DF20351C4B00DC001ECC11 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63DF20371C4B00FD001ECC11 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		682DC99CCE04CE4112248BBF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 				8FC5B2AC1C48C499000E2869 /* LoginRegisterViewController.swift */,
 				8FC5B2AE1C48C76E000E2869 /* RegisterViewController.swift */,
 				63DF20351C4B00DC001ECC11 /* LoginViewController.swift */,
+				638DD02D1C4B7CB5009706DB /* AccountViewController.swift */,
+				638DD02F1C4B7CCB009706DB /* SettingViewController.swift */,
+				638DD0311C4B8133009706DB /* ItineraryViewController.swift */,
+				638DD0331C4B81C2009706DB /* NoteViewController.swift */,
 			);
 			path = AsuraIOS;
 			sourceTree = "<group>";
@@ -227,8 +239,12 @@
 			files = (
 				8FC5B2AD1C48C499000E2869 /* LoginRegisterViewController.swift in Sources */,
 				8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */,
+				638DD02E1C4B7CB5009706DB /* AccountViewController.swift in Sources */,
 				8FC5B2AB1C48BFF2000E2869 /* HomeViewController.swift in Sources */,
+				638DD0341C4B81C2009706DB /* NoteViewController.swift in Sources */,
 				63DF20361C4B00DC001ECC11 /* LoginViewController.swift in Sources */,
+				638DD0301C4B7CCB009706DB /* SettingViewController.swift in Sources */,
+				638DD0321C4B8133009706DB /* ItineraryViewController.swift in Sources */,
 				8FC5B2AF1C48C76E000E2869 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

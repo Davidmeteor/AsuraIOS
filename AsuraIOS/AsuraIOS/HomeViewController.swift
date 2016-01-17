@@ -9,8 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +32,6 @@ class HomeViewController: UIViewController {
                     return
                 }
             })
-        }
-        if let pUserName = PFUser.currentUser()?["username"] as? String {
-            self.userNameLabel.text = "@" + pUserName
         }
     }
 
@@ -77,6 +72,10 @@ class HomeViewController: UIViewController {
                 print("\(userEmail)")
                 
                 // Insert to Pasrse
+                if (PFUser.currentUser() == nil)
+                {
+                    return
+                }
                 
                 let myUser = PFUser.currentUser()!
                 
@@ -118,18 +117,6 @@ class HomeViewController: UIViewController {
 
     }
     
-    @IBAction func logOutAction(sender: AnyObject) {
-        
-        // log out
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut()
-        PFUser.logOut()
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginRegister")
-            self.presentViewController(viewController, animated: true, completion: nil)
-        })
-    }
 
     /*
     // MARK: - Navigation
