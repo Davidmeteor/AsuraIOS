@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
         if ((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil)) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginRegister")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginNav")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
