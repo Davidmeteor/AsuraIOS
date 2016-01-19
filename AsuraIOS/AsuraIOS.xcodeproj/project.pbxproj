@@ -13,6 +13,7 @@
 		638DD0341C4B81C2009706DB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DD0331C4B81C2009706DB /* NoteViewController.swift */; };
 		63DF20361C4B00DC001ECC11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF20351C4B00DC001ECC11 /* LoginViewController.swift */; };
 		63DF20381C4B00FD001ECC11 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 63DF20371C4B00FD001ECC11 /* Podfile */; };
+		6E9DC0D31C4E1F100020BF93 /* ViewControllerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DC0D21C4E1F100020BF93 /* ViewControllerUtility.swift */; };
 		8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5B2771C48B74E000E2869 /* AppDelegate.swift */; };
 		8FC5B27D1C48B74E000E2869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC5B27B1C48B74E000E2869 /* Main.storyboard */; };
 		8FC5B27F1C48B74E000E2869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FC5B27E1C48B74E000E2869 /* Assets.xcassets */; };
@@ -31,8 +32,9 @@
 		638DD0311C4B8133009706DB /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		638DD0331C4B81C2009706DB /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		63DF20351C4B00DC001ECC11 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		63DF20371C4B00FD001ECC11 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		63DF20371C4B00FD001ECC11 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		682DC99CCE04CE4112248BBF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6E9DC0D21C4E1F100020BF93 /* ViewControllerUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUtility.swift; sourceTree = "<group>"; };
 		8FC5B2741C48B74E000E2869 /* AsuraIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsuraIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FC5B2771C48B74E000E2869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FC5B27C1C48B74E000E2869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				638DD02F1C4B7CCB009706DB /* SettingViewController.swift */,
 				638DD0311C4B8133009706DB /* ItineraryViewController.swift */,
 				638DD0331C4B81C2009706DB /* NoteViewController.swift */,
+				6E9DC0D21C4E1F100020BF93 /* ViewControllerUtility.swift */,
 			);
 			path = AsuraIOS;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9DC0D31C4E1F100020BF93 /* ViewControllerUtility.swift in Sources */,
 				8FC5B2AD1C48C499000E2869 /* LoginRegisterViewController.swift in Sources */,
 				8FC5B2781C48B74E000E2869 /* AppDelegate.swift in Sources */,
 				638DD02E1C4B7CB5009706DB /* AccountViewController.swift in Sources */,

@@ -30,9 +30,9 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    // FBSDKLoginButtonDelegate function
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result:FBSDKLoginManagerLoginResult!, error: NSError!)
     {
-        
         if(error != nil)
         {
             print(error.localizedDescription)
@@ -41,6 +41,9 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
         
         if let userToken = result.token
         {
+            // Login to parse through using access token
+            loginFBToParseWithAccessToken(userToken)
+            /*
             // Get user access token
             let token:FBSDKAccessToken = result.token
             print("Token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
@@ -75,17 +78,13 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
                         print("add User to Parse")
                     }
                 })
-            }
+            }*/
             
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
-                self.presentViewController(viewController, animated: true, completion: nil)
-            })
-            
+            // move view to tab bar after
         }
     }
     
+    // FBSDKLoginButtonDelegate function
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
         print("user is logged out")
@@ -118,15 +117,12 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
         if let username = username where username.characters.count < 5 {
             alertController_username.addAction(okAction)
             self.presentViewController(alertController_username, animated: true, completion: nil)
-            
         } else if let password = password where password.characters.count < 8 {
             alertController_password.addAction(okAction)
             self.presentViewController(alertController_password, animated: true, completion: nil)
-            
         } else if let email = email where email.characters.count < 8 {
             alertController_email.addAction(okAction)
             self.presentViewController(alertController_email, animated: true, completion: nil)
-            
         } else {
             // spinner
             let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
@@ -140,19 +136,14 @@ class RegisterViewController: UIViewController, FBSDKLoginButtonDelegate{
             
             // register user by async method
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
-                
                 // stop spinner
                 spinner.stopAnimating()
                 if ((error) != nil) {
                     let alertController_signup_fail = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
                     alertController_signup_fail.addAction(okAction)
                     self.presentViewController(alertController_signup_fail, animated: true, completion: nil)
-                    
                 } else {
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    })
+                    self.moveViewtoHomeTab()
                 }
             })
         }

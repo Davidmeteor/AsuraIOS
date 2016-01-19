@@ -1,63 +1,60 @@
 //
-//  HomeViewController.swift
+//  ViewControllerUtility.swift
 //  AsuraIOS
 //
-//  Created by David Lin on 1/14/16.
+//  Created by ChanCyrus on 1/18/16.
 //  Copyright © 2016 David Lin. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+extension UIViewController
+{
+    // used when user log in
+    func moveViewtoHomeTab() {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("mainTabBar")
+            self.presentViewController(viewController, animated: true, completion: nil)
+        })
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        /*
-        // Do any additional setup after loading the view.
-        if((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil))
-        {
-            // do nothing
-            return
-        }
-        if((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() != nil))
-        {
-            // Need to log in
-            PFUser.logInWithUsernameInBackground(FBSDKAccessToken.currentAccessToken().userID, password: FBSDKAccessToken.currentAccessToken().userID, block: { (user, error) -> Void in
-                if ((user) != nil) {
-                    print("Parse User log in success")
+    // used when user is not logged in or decide to log out
+    func moveViewToLogin(){
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginNav")
+            self.presentViewController(viewController, animated: true, completion: nil)
+        })
+    }
+    // for Logging in/Sign up to Parse with Facebook Token
+    // It also stores data from fb(first/last name, email, profile pictures) to parse too
+    func loginFBToParseWithAccessToken(userToken:FBSDKAccessToken){
+        PFFacebookUtils.logInInBackgroundWithAccessToken(userToken, block: {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                    self.saveBasicInfoFromFBToParse()
+                    self.moveViewtoHomeTab()
+                } else {
+                    print("User logged in through Facebook!")
+                    self.moveViewtoHomeTab()
                 }
-                else
-                {
-                    print("can't log in to Parse")
-                    return
-                }
-            })
-        }*/
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        // check if user is logged in already, else move to login page
-        // check is done here to enhance speed of loading the app
-        if ((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil)) {
-            self.moveViewToLogin()
-        }
-        
-        // Read more information from Facebook
-        /*
-        var requestParameters = ["fields": "id, email, first_name, last_name"]
+    func saveBasicInfoFromFBToParse(){
+        let requestParameters = ["fields": "id, email, first_name, last_name"]
         let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         userDetails.startWithCompletionHandler{
             (connection, result, error:NSError!) -> Void in
             
             if(error != nil)
             {
-                print("testsetes")
                 print("\(error.localizedDescription)")
                 return
             }
@@ -72,7 +69,7 @@ class HomeViewController: UIViewController {
                 
                 print("\(userEmail)")
                 
-                // Insert to Pasrse
+                // Insert to Parse
                 if (PFUser.currentUser() == nil)
                 {
                     return
@@ -94,7 +91,7 @@ class HomeViewController: UIViewController {
                 }
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                    var userProfile = "https://graph.facebook.com/" + userId + "/picture?type=large"
+                    let userProfile = "https://graph.facebook.com/" + userId + "/picture?type=large"
                     let profilePictureUrl = NSURL(string: userProfile)
                     let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
                     
@@ -114,19 +111,6 @@ class HomeViewController: UIViewController {
                     })
                 }
             }
-        }*/
-
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

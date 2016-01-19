@@ -60,12 +60,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                 
                 if ((user) != nil) {
                     print("log in success")
-                    
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    })
-                    
+                    self.moveViewtoHomeTab()
                 } else {
                     alertController_loginfail.addAction(okAction)
                     self.presentViewController(alertController_loginfail, animated: true, completion: nil)
@@ -75,9 +70,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
     
+    //
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result:FBSDKLoginManagerLoginResult!, error: NSError!)
     {
-        
         if(error != nil)
         {
             print(error.localizedDescription)
@@ -86,48 +81,47 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         
         if let userToken = result.token
         {
+            // Login to parse through using access token
+            loginFBToParseWithAccessToken(userToken)
+            
+            /*
             // Get user access token
             let token:FBSDKAccessToken = result.token
             print("Token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
             print("User ID = \(FBSDKAccessToken.currentAccessToken().userID)")
-            
             // Insert to Pasrse
             if(PFUser.currentUser() == nil)
             {
-                let newUser = PFUser()
-                
-                newUser.username = FBSDKAccessToken.currentAccessToken().userID
-                newUser.password = FBSDKAccessToken.currentAccessToken().userID
-                
-                // register user by async method
-                newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
-                    
-                    // stop spinner
-                    if ((error) != nil) {
-                        print("\(error?.localizedDescription)")
-                        // Re-log in the user
-                        // Need to log in
-                        PFUser.logInWithUsernameInBackground(FBSDKAccessToken.currentAccessToken().userID, password: FBSDKAccessToken.currentAccessToken().userID, block: { (user, error) -> Void in
-                            if ((user) != nil) {
-                                print("Parse User log in success")
-                            }
-                            else
-                            {
-                                print("can't log in to Parse")
-                                return
-                            }
-                        })
-                    } else {
-                        print("add User to Parse")
-                    }
-                })
-            }
-
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainTabBar")
-                self.presentViewController(viewController, animated: true, completion: nil)
-            })
+            let newUser = PFUser()
             
+            newUser.username = FBSDKAccessToken.currentAccessToken().userID
+            newUser.password = FBSDKAccessToken.currentAccessToken().userID
+            
+            // register user by async method
+            newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+            
+            // stop spinner
+            if ((error) != nil) {
+            print("\(error?.localizedDescription)")
+            // Re-log in the user
+            // Need to log in
+            PFUser.logInWithUsernameInBackground(FBSDKAccessToken.currentAccessToken().userID, password: FBSDKAccessToken.currentAccessToken().userID, block: { (user, error) -> Void in
+            if ((user) != nil) {
+            print("Parse User log in success")
+            }
+            else
+            {
+            print("can't log in to Parse")
+            return
+            }
+            })
+            } else {
+            print("add User to Parse")
+            }
+            })
+            }*/
+            
+            // move view to tab bar after
         }
     }
     
@@ -135,6 +129,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     {
         print("user is logged out")
     }
+    
 
     /*
     // MARK: - Navigation
