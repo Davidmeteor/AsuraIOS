@@ -17,12 +17,77 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rkd-kY-x2y"/>
+                        <segue destination="9Re-G9-iYN" kind="relationship" relationship="rootViewController" id="Zf3-Ve-aWS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClC-kY-oNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2037" y="2135"/>
+            <point key="canvasLocation" x="-2121" y="2121"/>
+        </scene>
+        <!--Tour Collection View Controller-->
+        <scene sceneID="CGs-Ql-s1H">
+            <objects>
+                <collectionViewController storyboardIdentifier="TourCollectionViewController" id="9Re-G9-iYN" customClass="TourCollectionViewController" customModule="AsuraIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="idW-ui-hTk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CxI-2L-GoR">
+                            <size key="itemSize" width="270" height="224"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TourCell" id="rGQ-8S-ExQ" customClass="TourCollectionViewCell" customModule="AsuraIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="270" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="224"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9h-cG-GIU">
+                                            <rect key="frame" x="4" y="8" width="258" height="202"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iks-h3-5iN" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="232" height="163"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJC-aU-T7a">
+                                                    <rect key="frame" x="2" y="174" width="216" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="tourImage" destination="iks-h3-5iN" id="Tje-uR-dsm"/>
+                                    <outlet property="tourName" destination="EJC-aU-T7a" id="MzT-5v-gC3"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="9Re-G9-iYN" id="BPg-OY-zSa"/>
+                            <outlet property="delegate" destination="9Re-G9-iYN" id="yEe-G8-Ynl"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="9VP-uh-0Yj">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="LFa-SL-uRy">
+                            <connections>
+                                <action selector="addTour:" destination="9Re-G9-iYN" id="txW-vI-cww"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="Tour"/>
+                    </userDefinedRuntimeAttributes>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xH8-Dq-NvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1385" y="2127"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,22 +102,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2F-EZ-0q3">
-                                <rect key="frame" x="269" y="285" width="63" height="30"/>
+                                <rect key="frame" x="269" y="86" width="63" height="30"/>
                                 <state key="normal" title="Add Tour"/>
+                                <connections>
+                                    <action selector="addTour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GNw-Mq-Vtw"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wkj-qM-Dak">
+                                <rect key="frame" x="98" y="144" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-to-sct">
+                                <rect key="frame" x="98" y="280" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N2F-EZ-0q3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Pao-Tx-WxY"/>
-                            <constraint firstItem="N2F-EZ-0q3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nc3-VB-ihw"/>
+                            <constraint firstItem="N2F-EZ-0q3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Ck-Xl-KK7"/>
+                            <constraint firstItem="N2F-EZ-0q3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="D7O-93-lh3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="H7U-gI-Uxy"/>
                     <navigationItem key="navigationItem" id="FJL-u6-HUw"/>
+                    <connections>
+                        <outlet property="tourImage" destination="Wkj-qM-Dak" id="eia-UU-4CZ"/>
+                        <outlet property="tourName" destination="o2n-to-sct" id="BKw-vS-BNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306" y="2135"/>
+            <point key="canvasLocation" x="-559" y="1940"/>
         </scene>
         <!--Profile-->
         <scene sceneID="QeM-aC-2Oj">

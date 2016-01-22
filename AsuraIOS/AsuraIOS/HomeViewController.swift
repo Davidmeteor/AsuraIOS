@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var tourImage: UIImageView!
+    @IBOutlet weak var tourName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +47,36 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         // check if user is logged in already, else move to login page
         // check is done here to enhance speed of loading the app
+        super.viewWillAppear(animated)
+        
         if ((PFUser.currentUser() == nil) && (FBSDKAccessToken.currentAccessToken() == nil)) {
             self.moveViewToLogin()
         }
+        
+        //Testing purposes
+        let query = PFQuery(className:"Tour")
+        query.getObjectInBackgroundWithId("5CaLteld1Q"){
+            (tour: PFObject?, error:NSError?) -> Void in
+            if error == nil && tour != nil{
+                tour!.pinInBackground()
+                print("first")
+                print(tour!["Name"] as! String)
+                //self.tourName.text = tour!["Name"] as! String
+            }
+        }
+
+        let local_query = PFQuery(className:"Tour")
+        local_query.fromLocalDatastore()
+        local_query.getObjectInBackgroundWithId("5CaLteld1Q"){
+            (tour: PFObject?, error:NSError?) -> Void in
+            if error == nil && tour != nil{
+                //tour!.pinInBackground()
+                self.tourName.text = tour!["Name"] as! String
+                print("second")
+                print(tour!["Name"] as! String)
+            }
+        }
+        
         
         // Read more information from Facebook
         /*
@@ -118,6 +148,11 @@ class HomeViewController: UIViewController {
 
     }
     
+    @IBAction func addTour(sender: UIButton) {
+        let newTour = Tour(name: "test")
+        newTour.saveInBackground()
+    }
+
 
     /*
     // MARK: - Navigation
